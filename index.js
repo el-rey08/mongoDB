@@ -82,18 +82,18 @@ app.put('/updateuser/:id',async(req, res)=>{
         res.status(500).json(error.message)
     }
 })
-app.delete('/deletestudent/:id',async(req, res)=>{
-    try {
-        let id = req.params.id
-        const deleteStudent = await mymodel.findByIdAndDelete(id,req.body)
-        res.status(200).json({
-            message:`user deleted sucessfully ${id}`,deleteStudent
-        })
+// app.delete('/deletestudent/:id',async(req, res)=>{
+//     try {
+//         let id = req.params.id
+//         const deleteStudent = await mymodel.findByIdAndDelete(id,req.body)
+//         res.status(200).json({
+//             message:`user deleted sucessfully ${id}`,deleteStudent
+//         })
 
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+//     } catch (error) {
+//         res.status(500).json(error.message)
+//     }
+// })
 app.listen(port,()=>{
     console .log(` my app is running on port ${port}`)
 });
